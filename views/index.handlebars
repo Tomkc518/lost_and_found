@@ -1,133 +1,121 @@
 <h1>Lost-and-Found</h1>
+<h3>What did you lose?</h3>
 
-<ul >
-  {{#each lost}}
-  <li>
-  
-    <div class="card">
-      <h5 class="card-header"><p><span class="list-group-item">Item Lost:  {{this.thing}}</p></span></h5>
-      <div class="card-body">
-        <h5 class="card-title"><p><span class="list-group-item">Date Lost:  {{this.date_lost}}</span> </p></h5>
-        <h5 class="card-title"><p><span class="list-group-item">Time Lost:  {{this.time_lost}}</p></span> </h5>
-        <p class="card-text"><p><span class="list-group-item">Last had where?:  {{this.last_had}}</p></span></p>
-        <p class="card-text"><p><span class="list-group-item">Description:  {{this.description}}</p></span></p>
 
-        <button data-id="{{this.id}}" class="btn btn-primary">Found!</button>
-        
+<br>
+<h5>Add a Lost Item</h5>
+<form id="createLost">
+  <div class="form-group">
+    <label for="searcher_name_input">Name</label>
+    <input type="text" class="form-control" id="searcher_name_input" placeholder="First and Last">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="searcher_email_input">Email</label>
+      <input type="email" class="form-control" id="searcher_email_input" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="searcher_phone_input">Phone Number</label>
+      <input type="text" class="form-control" id="searcher_phone_input" placeholder="Password">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="thing_input">What is it?</label>
+    <input type="text" class="form-control" id="thing_input" placeholder="A red and grey KC Chiefs hat...">
+  </div>
+
+  <div class="form-group">
+    <label for="description_input">Description</label>
+    <input type="text" class="form-control" id="description_input" placeholder="It has a hole on the side and 'BOB' on the tag...">
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="date_lost_input">Date Lost</label>
+      <input type="text" class="form-control" id="date_lost_input">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="time_lost_input">Time Lost</label>
+      <input type="text" class="form-control" id="time_lost_input">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" id="create_lost">Submit</button>
+</form>
+<br>
+
+
+<!-- Modal -->
+<div id "lostEntry" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your item has been successfully added.  Hopy you find it soon!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add another item</button>
       </div>
     </div>
-
-      
-
-    </li>
-    {{/each}}
-</ul>
-
-
-
-<h2>Add a Lost Item</h2>
-<form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-    </div>
   </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
-
-
+</div>
 
 
 
 <script type="text/javascript">
-  $(".delplan").on("click", function (event) {
-    var id = $(this).data("planid");
+//create a new lost item
 
-    // Send the DELETE request.
-    $.ajax("/todos/" + id, {
-      type: "DELETE"
-    }).then(
-      function () {
-        console.log("deleted id ", id);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
-
-
-
-  $("#createLost").on("submit", function (event) {
-    // Make sure to preventDefault on a submit event.
+  $("#create_lost").on("submit", function (event) {
+    //preventDefault on a submit event.
     event.preventDefault();
 
-    var newPlan = {
-      plan: $("#createLost [name=plan]").val().trim()
+    var newLost = {
+      searcher_name: $("#searcher_name_input").val().trim(),
+      searcher_email: $("#searcher_email_input").val().trim(),
+      searcher_phone: $("#searcher_phone_input").val().trim(),
+      searcher_name: $("#searcher_name_input").val().trim(),
+      thing: $("#thing_input").val().trim(),
+      description: $("#description_input").val().trim(),
+      date_lost: $("#date_lost_input").val().trim(),
+      time_lost: $("#time_lost_input").val().trim()
+
     };
 
-    // Send the POST request.
-    $.ajax("/todos", {
-      type: "POST",
-      data: newPlan
-    }).then(
-      function () {
-        console.log("created new plan");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
+    $.post("/lost", newLost).done(function (data) {
+        console.log(data);
+
+        $("#lostEntry").modal('toggle');
+
+      });
   });
 
-  $("#updateplan").on("submit", function (event) {
+
+
+
+
+  $("#updateLost").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
     var id = $("[name=id]").val().trim();
 
-    var updatedPlan = {
-      plan: $("#updateplan [name=plan]").val().trim()
+    var updatedLost = {
+      lost: $("######").val().trim()
     };
 
     // Send the PUT request.
-    $.ajax("/todos/" + id, {
+    $.ajax("#####" + id, {
       type: "PUT",
       data: updatedPlan
     }).then(
