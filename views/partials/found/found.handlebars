@@ -1,6 +1,7 @@
 <h1>Lost-and-Found</h1>
+<h3>Found</h3>
 
-<ul>
+<ul id="foundTable">
   {{#each lost}}
   <li>
 
@@ -11,12 +12,22 @@
         </span>
       </h5>
       <div class="card-body">
-        <h5 class="card-title">
+                
+        <p class="card-text">
           <p>
-            <span class="list-group-item">belongs to: {{this.searcher_name}}</span>
-          </p>
-        </h5>
-        
+            <span class="list-group-item">Belongs to: {{this.searcher_name}}</p>
+          </span>
+        </p>
+
+        <p class="card-text">
+          <p>
+            <span class="list-group-item">Found: {{this.found_date}}</p> <!--add to sql-->
+          </span>
+        </p>
+
+        <button data-id="{{this.id}}" class="btn btn-primary">Found!</button>
+
+      </div>
     </div>
 
   </li>
