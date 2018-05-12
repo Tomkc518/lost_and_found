@@ -26,6 +26,7 @@
   <div class="form-group">
     <label for="formGroupExampleInput2">When did you lose it?</label>
     <input type="text" class="form-control" id="date_lost_input" placeholder="Date lost">
+    <br>
     <input type="text" class="form-control" id="time_lost_input" placeholder="Time Lost">
   </div>
 
@@ -77,6 +78,8 @@
       }
     );
   });
+
+
 
   $("#createLost").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
