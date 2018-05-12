@@ -7,23 +7,33 @@ var app = express();
 // process.env.PORT lets the port be set by Heroku
 var PORT = process.env.PORT || 8080;
 
+var db = require("./models");
+
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var exphbs = require("express-handlebars");
 
+app.use(express.static("public"));
+
+// Routes
+// =============================================================
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var mysql = require("mysql");
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
+    });
+  });
+  
+/*var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "Tricia615", //<-----------------put password in here 
-    database: "lost_and_found_db"
-});
+
 
 connection.connect(function (err) {
     if (err) {
@@ -112,4 +122,4 @@ app.delete("/lost/:id", function (req, res) {
 app.listen(PORT, function () {
     // Log (server-side) when our server has started
     console.log("Server listening on: http://localhost:" + PORT);
-});
+});*/
