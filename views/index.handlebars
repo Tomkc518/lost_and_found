@@ -1,13 +1,11 @@
-<h1>Lost-and-Found</h1>
 <h3>What did you lose?</h3>
 
 
-<br>
 <h5>Add a Lost Item</h5>
 <form id="createLost">
   <div class="form-group">
-    <label for="searcher_name_input">Name</label>
-    <input type="text" class="form-control" id="searcher_name_input" placeholder="First and Last">
+    <label for="name_input">Name</label>
+    <input type="text" class="form-control" id="name_input" placeholder="First and Last">
   </div>
 
   <div class="form-row">
@@ -16,20 +14,25 @@
       <input type="email" class="form-control" id="searcher_email_input" placeholder="name@mail.com">
     </div>
     <div class="form-group col-md-6">
-      <label for="searcher_phone_input">Phone Number</label>
-      <input type="text" class="form-control" id="searcher_phone_input" placeholder="555-222-2222">
+      <label for="phone_input">Phone Number</label>
+      <input type="text" class="form-control" id="phone_input" placeholder="555-222-2222">
     </div>
   </div>
 
 
   <div class="form-group">
-    <label for="thing_input">What is it?</label>
-    <input type="text" class="form-control" id="thing_input" placeholder="A red and grey KC Chiefs hat...">
+    <label for="item_input">What is it?</label>
+    <input type="text" class="form-control" id="item_input" placeholder="A red and grey KC Chiefs hat...">
   </div>
 
   <div class="form-group">
     <label for="image_input">Link to image</label>
     <input type="text" class="form-control" id="image_input" placeholder="paste link">
+  </div>
+
+<div class="form-group">
+    <label for="lost_where_input">Last had at: </label>
+    <input type="text" class="form-control" id="image_input" placeholder="Staples Center">
   </div>
 
   <div class="form-group">
@@ -38,19 +41,8 @@
   </div>
 
 
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="date_lost_input">Date Lost</label>
-      <input type="text" class="form-control" id="date_lost_input">
-    </div>
-
-    <div class="form-group col-md-6">
-      <label for="time_lost_input">Time Lost</label>
-      <input type="text" class="form-control" id="time_lost_input">
-    </div>
-  </div>
-
   <button type="submit" class="btn btn-primary" id="create_lost">Submit</button>
+
 </form>
 <br>
 
@@ -60,13 +52,13 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Your Item has been added</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Your item has been successfully added.  Hope you find it soon!
+        Good luck! We hope we find your {{this.item}} soon!
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
