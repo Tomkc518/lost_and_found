@@ -1,0 +1,42 @@
+<h1>Lost-and-Found</h1>
+
+<ul>
+  {{#each lost}}
+  <li>
+
+    <div class="card">
+      <h5 class="card-header">
+        <p>
+          <span class="list-group-item">{{this.thing}}</p>
+        </span>
+      </h5>
+      <div class="card-body">
+        <h5 class="card-title">
+          <p>
+            <span class="list-group-item">Date Lost: {{this.date_lost}}</span>
+          </p>
+        </h5>
+        <h5 class="card-title">
+          <p>
+            <span class="list-group-item">Time Lost: {{this.time_lost}}</p>
+          </span>
+        </h5>
+        <p class="card-text">
+          <p>
+            <span class="list-group-item">Last had at: {{this.last_had}}</p>
+          </span>
+        </p>
+        <p class="card-text">
+          <p>
+            <span class="list-group-item">Description: {{this.description}}</p>
+          </span>
+        </p>
+
+        <button data-id="{{this.id}}" class="btn btn-primary">Found!</button>
+
+      </div>
+    </div>
+
+  </li>
+  {{/each}}
+</ul>

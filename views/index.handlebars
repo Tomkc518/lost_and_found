@@ -1,0 +1,134 @@
+<h1>Lost-and-Found</h1>
+<h3>What did you lose?</h3>
+
+
+<br>
+<h5>Add a Lost Item</h5>
+<form id="createLost">
+  <div class="form-group">
+    <label for="searcher_name_input">Name</label>
+    <input type="text" class="form-control" id="searcher_name_input" placeholder="First and Last">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="searcher_email_input">Email</label>
+      <input type="email" class="form-control" id="searcher_email_input" placeholder="name@mail.com">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="searcher_phone_input">Phone Number</label>
+      <input type="text" class="form-control" id="searcher_phone_input" placeholder="555-222-2222">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="thing_input">What is it?</label>
+    <input type="text" class="form-control" id="thing_input" placeholder="A red and grey KC Chiefs hat...">
+  </div>
+
+  <div class="form-group">
+    <label for="image_input">Link to image</label>
+    <input type="text" class="form-control" id="image_input" placeholder="paste link">
+  </div>
+
+  <div class="form-group">
+    <label for="description_input">Description</label>
+    <textarea class="form-control" id="description_input" rows="3" placeholder="Red with white writing"></textarea>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="date_lost_input">Date Lost</label>
+      <input type="text" class="form-control" id="date_lost_input">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="time_lost_input">Time Lost</label>
+      <input type="text" class="form-control" id="time_lost_input">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" id="create_lost">Submit</button>
+</form>
+<br>
+
+
+<!-- Modal -->
+<div id "lostEntry" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your item has been successfully added.  Hopy you find it soon!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add another item</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+//create a new lost item
+
+  $("#create_lost").on("submit", function (event) {
+    //preventDefault on a submit event.
+    event.preventDefault();
+
+    var newLost = {
+      searcher_name: $("#searcher_name_input").val().trim(),
+      searcher_email: $("#searcher_email_input").val().trim(),
+      searcher_phone: $("#searcher_phone_input").val().trim(),
+      searcher_name: $("#searcher_name_input").val().trim(),
+      thing: $("#thing_input").val().trim(),
+      description: $("#description_input").val().trim(),
+      date_lost: $("#date_lost_input").val().trim(),
+      time_lost: $("#time_lost_input").val().trim()
+
+    };
+
+    $.post("/lost", newLost).done(function (data) {
+        console.log(data);
+
+        $("#lostEntry").modal('toggle');
+
+      });
+  });
+
+
+
+
+
+  $("#updateLost").on("submit", function (event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var id = $("[name=id]").val().trim();
+
+    var updatedLost = {
+      lost: $("######").val().trim()
+    };
+
+    // Send the PUT request.
+    $.ajax("#####" + id, {
+      type: "PUT",
+      data: updatedPlan
+    }).then(
+      function () {
+        console.log("updated id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+</script>
