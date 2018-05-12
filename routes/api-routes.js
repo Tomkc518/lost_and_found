@@ -20,18 +20,6 @@ module.exports = function(app) {
       });
   });
 
-  // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
-    db.Post.findAll({
-      where: {
-        category: req.params.category
-      }
-    })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
-  });
-
   // Get route for retrieving a single post
   app.get("/api/posts/:id", function(req, res) {
     db.Post.findOne({
@@ -48,9 +36,12 @@ module.exports = function(app) {
   app.post("/api/posts", function(req, res) {
     console.log(req.body);
     db.Post.create({
-      title: req.body.title,
-      body: req.body.body,
-      category: req.body.category
+      name: req.body.name,
+      email: req.body.email,
+      phone: req.body.phone,
+      item: req.body.item,
+      description: req.body.description,
+      image: req.body.image,
     })
       .then(function(dbPost) {
         res.json(dbPost);
