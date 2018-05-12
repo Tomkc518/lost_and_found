@@ -21,9 +21,11 @@ $(document).ready(function() {
       }).then(
         function() {
           // Reload the page to get the updated list
+          //location.reload();
+          //alert("this is the modal")
           $("#lostEntry").modal('toggle');
       })
-  });
+    });
 
   $("#updateLost").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
