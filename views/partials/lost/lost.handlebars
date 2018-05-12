@@ -1,29 +1,38 @@
-<h1>Lost-and-Found</h1>
+<!--Updates and moves a LOST item to the FOUND page-->
+<ul>
+  {{#each lost}}{{#unless found}}
+      {{> lost/lost lost=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
 
 <ul>
+  {{#each lost}}{{#if found}}
+      {{> lost/lost lost=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+
+<ul id="lostTable">
   {{#each lost}}
   <li>
 
     <div class="card">
       <h5 class="card-header">
         <p>
-          <span class="list-group-item">{{this.thing}}</p>
+          <span class="list-group-item">{{this.item}}</p>
         </span>
       </h5>
       <div class="card-body">
         <h5 class="card-title">
           <p>
-            <span class="list-group-item">Date Lost: {{this.date_lost}}</span>
+            <span class="list-group-item">Lost When: {{this.createdAt}}</span>
           </p>
-        </h5>
-        <h5 class="card-title">
-          <p>
-            <span class="list-group-item">Time Lost: {{this.time_lost}}</p>
-          </span>
         </h5>
         <p class="card-text">
           <p>
-            <span class="list-group-item">Last had at: {{this.last_had}}</p>
+            <span class="list-group-item">Last had at: {{this.lost_where}}</p>
           </span>
         </p>
         <p class="card-text">
@@ -40,3 +49,5 @@
   </li>
   {{/each}}
 </ul>
+
+
