@@ -1,21 +1,7 @@
 <!--Updates and moves a LOST item to the FOUND page-->
-<ul>
-  {{#each lost}}{{#unless found}}
-      {{> lost/lost lost=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<ul>
-  {{#each lost}}{{#if found}}
-      {{> lost/lost lost=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
 
 <ul id="lostTable">
-  {{#each lost}}
+  {{#each posts}} {{#unless found}} {{> lost/lost found=0}}
   <li>
 
     <div class="card">
@@ -27,19 +13,19 @@
 
       <div class="card-body">
         <h5 class="card-title">
-          <p>
-            <span class="list-group-item">Lost When: {{this.createdAt}}</span>
+          <p>Lost When:
+            <span class="list-group-item"> {{this.createdAt}}</span>
           </p>
         </h5>
 
         <p class="card-text">
-          <p>
+          <p> ****** PLACE HOLDER.....IMAGE WILL SHOW HERE ******
             <span class="list-group-item">{{this.image}}</p>
           </span>
         </p>
         <p class="card-text">
-          <p>
-            <span class="list-group-item">Description: {{this.description}}</p>
+          <p>Description:
+            <span class="list-group-item"> {{this.description}}</p>
           </span>
         </p>
 
@@ -49,6 +35,7 @@
     </div>
 
   </li>
+  {{/unless}}
   {{/each}}
 </ul>
 
