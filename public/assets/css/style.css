@@ -1,3 +1,20 @@
-h1, h3 {
-    color: blue;
+h1, h3, h5 {
+    font-family: 'Permanent Marker', cursive;
+    color:black;   
+}
+
+label{
+    
+    
+}
+
+.jumbotron {
+background-image: url(../images/box_of_stuff.jpg);
+background-position: 0% 25%;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+body {
+    background-color: antiquewhite;
 }
