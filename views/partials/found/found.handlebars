@@ -8,22 +8,18 @@
     <div class="card">
       <h5 class="card-header">
         <p>
-          <span class="list-group-item">{{this.thing}}</p>
+          <span class="list-group-item">{{this.item}}</p>
         </span>
       </h5>
       <div class="card-body">
                 
         <p class="card-text">
           <p>
-            <span class="list-group-item">Belongs to: {{this.searcher_name}}</p>
+            <span class="list-group-item">Belongs to: {{this.name}}</p>
           </span>
         </p>
 
-        <p class="card-text">
-          <p>
-            <span class="list-group-item">Found: {{this.found_date}}</p> <!--add to sql-->
-          </span>
-        </p>
+        
 
         <button data-id="{{this.id}}" class="btn btn-primary">Found!</button>
 
