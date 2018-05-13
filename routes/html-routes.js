@@ -10,14 +10,21 @@ module.exports = function(app) {
   app.get("/", function (req, res) {
      db.Post.findAll({})
         .then(function(dbPost) {
-          res.render("index", { lost: dbPost });
+          res.render("index", { posts: dbPost });
       });
   });
 
   app.get("/lost", function (req, res) {
     db.Post.findAll({})
        .then(function(dbPost) {
-         res.render("partials/lost/lost", { lost: dbPost });
+         res.render("partials/lost/lost", { posts: dbPost });
      });
  });
+
+ app.get("/found", function (req, res) {
+  db.Post.findAll({})
+     .then(function(dbPost) {
+       res.render("partials/found/found", { posts: dbPost });
+   });
+});
 };
