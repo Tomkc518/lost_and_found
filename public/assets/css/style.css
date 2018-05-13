@@ -1,8 +1,15 @@
 h1, h3, h5 {
     font-family: 'Permanent Marker', cursive;
-    color:black;   
+    color: black;   
 }
 
+p, 
+.form-group {
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Courgette', cursive;
+    color:black;
+}
+    
 #lostTable{
     list-style: none;
 }
@@ -12,12 +19,24 @@ h1, h3, h5 {
 }
 
 .jumbotron {
-background-image: url(../images/box_of_stuff.jpg);
-background-position: 0% 25%;
-background-size: cover;
-background-repeat: no-repeat;
+    background-image: url(../images/cracked-wood-pole.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 body {
-    background-color: antiquewhite;
+    background-image: url(../images/cracked-wood-pole.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.btn {
+    float: right;
+    color: white;
+}
+
+#foundHead {
+    text-indent: 15%;
 }
