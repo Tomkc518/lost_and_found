@@ -6,10 +6,10 @@ $(document).ready(function() {
     event.preventDefault();
 
     var newLost = {
-      name: $("#searcher_name_input").val().trim(),
+      name: $("#name_input").val().trim(),
       email: $("#searcher_email_input").val().trim(),
-      phone: $("#searcher_phone_input").val().trim(),
-      item: $("#thing_input").val().trim(),
+      phone: $("#phone_input").val().trim(),
+      item: $("#item_input").val().trim(),
       description: $("#description_input").val().trim(),
       image: $("#image_input").val().trim()
     };
