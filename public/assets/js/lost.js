@@ -27,26 +27,23 @@ $(document).ready(function() {
       })
     });
 
-  $("#updateLost").on("submit", function (event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-
-    var id = $("[name=id]").val().trim();
-
-    var updatedLost = {
-      lost: $("######").val().trim()
-    };
-
-    // Send the PUT request.
-    $.ajax("#####" + id, {
-      type: "PUT",
-      data: updatedPlan
-    }).then(
-      function () {
-        console.log("updated id ", id);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
+  $(".foundBtn").on("click", function (event) {
+      var id = $(this).data("id");
+      var status = true;
+      var found = {
+        found: status
+      };
+      
+      // Send the PUT request.
+      $.ajax("/api/posts/" + id, {
+        type: "PUT",
+        data: found
+      }).then(
+        function() {
+          console.log("changed found to", found);
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
 });
