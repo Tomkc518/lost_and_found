@@ -1,4 +1,9 @@
-h1, h3, h5 {
+h1 { 
+    font-family: 'Permanent Marker', cursive;
+    color: white; 
+} 
+
+h3, h5, a {
     font-family: 'Permanent Marker', cursive;
     color: black;   
 }
@@ -40,3 +45,31 @@ body {
 #foundHead {
     text-indent: 15%;
 }
+
+ .form-control {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Caveat', cursive;
+    font-family: 'Just Me Again Down Here', cursive;
+    color:black;
+    font-weight: bold;
+    width: 80%;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+    width: 80%;
+    padding: 12px 20px;
+    
+    margin-left: 30px;
+    box-sizing: border-box;
+}
+
+#main_body{
+    background-image: url(../images/paperTape.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Start http://www.cursors-4u.com */ * 
+{cursor: url(http://ani.cursors-4u.net/others/oth-9/oth838.cur), auto !important;} /* End http://www.cursors-4u.com */
