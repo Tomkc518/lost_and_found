@@ -1,11 +1,4 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
-
-// Dependencies
-// =============================================================
-
-// Requiring our Todo model
+// Requiring our Post model
 var db = require("../models");
 
 // Routes
@@ -42,18 +35,6 @@ module.exports = function(app) {
       item: req.body.item,
       description: req.body.description,
       image: req.body.image,
-    })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
-  });
-
-  // DELETE route for deleting posts
-  app.delete("/api/posts/:id", function(req, res) {
-    db.Post.destroy({
-      where: {
-        id: req.params.id
-      }
     })
       .then(function(dbPost) {
         res.json(dbPost);

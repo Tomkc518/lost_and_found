@@ -1,10 +1,8 @@
-<h3 id="foundHead">Found</h3> <!--WHY IS THE HEADING BEING LOOPED THROUG??? melinda-->
-
 <ul id="foundTable">
   
   {{#each posts}} {{#if found}} {{> found/found found=1}}
   <li>
-
+    <h3>Found Item ID: <span>{{this.id}}</span></h3>
     <div class="card">
       <h5 class="card-header">
         <p>
@@ -12,7 +10,11 @@
         </span>
       </h5>
       <div class="card-body">
-              
+        <p class="card-text">
+          <p>
+            <img id="match-img" src="{{this.image}}" alt="" width="50%";>
+          </p>
+        </p>      
         <p class="card-text">
           <p>Found on:
             <span class="list-group-item"> {{this.updatedAt}}</p>

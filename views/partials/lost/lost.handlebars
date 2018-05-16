@@ -1,10 +1,10 @@
 <!--Updates and moves a LOST item to the FOUND page-->
-<h3>Lost</h3>  <!--WHY IS THE HEADING BEING LOOPED THROUG??? melinda-->
+  <!--WHY IS THE HEADING BEING LOOPED THROUG??? melinda-->
 
 <ul id="lostTable">
   {{#each posts}} {{#unless found}} {{> lost/lost found=0}}
   <li>
-
+    <h3>Lost Item ID: <span>{{this.id}}</span></h3>
     <div class="card">
       <h5 class="card-header">
         <p>
@@ -20,9 +20,9 @@
         </h5>
 
         <p class="card-text">
-          <p> *** PLACE HOLDER.....IMAGE WILL SHOW HERE ***
-            <span class="list-group-item">{{this.image}}</p>
-          </span>
+          <p>
+            <img id="match-img" src="{{this.image}}" alt="" width="50%";>
+          </p>
         </p>
         <p class="card-text">
           <p>Description:
