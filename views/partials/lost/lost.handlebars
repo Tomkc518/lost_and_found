@@ -1,10 +1,9 @@
-<!--Updates and moves a LOST item to the FOUND page-->
-  <!--WHY IS THE HEADING BEING LOOPED THROUG??? melinda-->
-
 <ul id="lostTable">
   {{#each posts}} {{#unless found}} {{> lost/lost found=0}}
   <li>
-    <h3>Lost Item ID: <span>{{this.id}}</span></h3>
+    <h3>Lost Item ID:
+      <span>{{this.id}}</span>
+    </h3>
     <div class="card">
       <h5 class="card-header">
         <p>
@@ -21,7 +20,7 @@
 
         <p class="card-text">
           <p>
-            <img id="match-img" src="{{this.image}}" alt="" width="50%";>
+            <img id="match-img" src="{{this.image}}" alt="" width="50%" ;>
           </p>
         </p>
         <p class="card-text">
@@ -36,9 +35,5 @@
     </div>
 
   </li>
-  {{/unless}}
-  {{/each}}
+  {{/unless}} {{/each}}
 </ul>
-
-
-

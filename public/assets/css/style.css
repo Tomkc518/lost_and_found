@@ -1,12 +1,20 @@
-h1 { 
+h5 {
     font-family: 'Permanent Marker', cursive;
-    color: white; 
+    color: green;
+    
+}
+
+h3, a { 
+    font-family: 'Permanent Marker', cursive;
+    color: green; 
 } 
 
-h3, h5, a {
+h1 {
     font-family: 'Permanent Marker', cursive;
-    color: black;   
-}
+    color: green; 
+    text-align: center;
+    text-decoration: underline;  
+} 
 
 p, 
 .form-group {
@@ -23,18 +31,10 @@ p,
     list-style: none;
 }
 
-.jumbotron {
-    background-image: url(../images/cracked-wood-pole.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
 body {
-    background-image: url(../images/cracked-wood-pole.jpg);
+    background-image: url(../images/cracked-wood-pole2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
 .btn {
@@ -60,7 +60,6 @@ input[type=email],
 textarea {
     width: 80%;
     padding: 12px 20px;
-    
     margin-left: 30px;
     box-sizing: border-box;
 }
@@ -69,7 +68,11 @@ textarea {
     background-image: url(../images/paperTape.png);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-right: 155px;
+    width: 58%;
+    margin-bottom: 70px;
+    
 }
 
-/* Start http://www.cursors-4u.com */ * 
+/* Start http://www.cursors-4u.com for pencil mouse cursor*/ * 
 {cursor: url(http://ani.cursors-4u.net/others/oth-9/oth838.cur), auto !important;} /* End http://www.cursors-4u.com */
