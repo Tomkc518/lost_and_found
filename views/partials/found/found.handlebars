@@ -1,8 +1,10 @@
 <ul id="foundTable">
-  
+
   {{#each posts}} {{#if found}} {{> found/found found=1}}
   <li>
-    <h3>Found Item ID: <span>{{this.id}}</span></h3>
+    <h3>Found Item ID:
+      <span>{{this.id}}</span>
+    </h3>
     <div class="card">
       <h5 class="card-header">
         <p>
@@ -12,9 +14,9 @@
       <div class="card-body">
         <p class="card-text">
           <p>
-            <img id="match-img" src="{{this.image}}" alt="" width="50%";>
+            <img id="match-img" src="{{this.image}}" alt="" width="50%" ;>
           </p>
-        </p>      
+        </p>
         <p class="card-text">
           <p>Found on:
             <span class="list-group-item"> {{this.updatedAt}}</p>
@@ -22,7 +24,7 @@
         </p>
 
         <p class="card-text">
-          <p>Returned to: 
+          <p>Returned to:
             <span class="list-group-item"> {{this.name}}</p>
           </span>
         </p>
@@ -31,11 +33,5 @@
     </div>
 
   </li>
-  {{/if}}
-  {{/each}}
+  {{/if}} {{/each}}
 </ul>
-
-  
-
-
-
