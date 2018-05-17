@@ -1,17 +1,27 @@
 h5 {
     font-family: 'Permanent Marker', cursive;
     color: green;
-    
+ 
+}
+
+h4 {
+    font-family: 'Permanent Marker', cursive;
+    color: green;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+ 
 }
 
 h3, a { 
     font-family: 'Permanent Marker', cursive;
     color: green; 
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+
 } 
 
 h1 {
     font-family: 'Permanent Marker', cursive;
-    color: green; 
+    color: green;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
     text-align: center;
     text-decoration: underline;  
 } 
@@ -64,6 +74,11 @@ textarea {
     box-sizing: border-box;
 }
 
+label {
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+    color:white;
+    font-size: large;
+}
 #main_body{
     background-image: url(../images/paperTape.png);
     background-repeat: no-repeat;
